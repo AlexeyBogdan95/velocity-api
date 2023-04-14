@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.3" />
+        <PackageReference Include="NSubstitute" Version="5.0.0" />
+        <PackageReference Include="Shouldly" Version="4.1.0" />
+    </ItemGroup>
+    
+
+    <ItemGroup>
+      <ProjectReference Include="..\Velocity.Domain\Velocity.Domain.csproj" />
+      <ProjectReference Include="..\Velocity.Infrastructure\Velocity.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

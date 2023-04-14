@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  pgsql:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=postgres
+    ports:
+      - "5433:5432"
+  
+  api:
+    image: velocity:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - pgsql
+    ports:
+      - "5050:80"
+    environment:
+      - ConnectionString=Host=pgsql;Username=postgres;Password=12345;Database=Velocity;Port=5432
